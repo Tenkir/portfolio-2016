@@ -1,0 +1,100 @@
+.s-italic {
+  font-style: italic;
+}
+
+.s-bold {
+  font-weight: bold;
+}
+
+.s-light-grey {
+  color: $gray-light;
+}
+
+.s-name {
+  margin-left: 80px;
+  margin-bottom: 6rem;
+
+  .s-blair {
+    position: relative;
+    top: 30px;
+    left: -77px;
+  }
+}
+
+.s-featured {
+  max-width: 968px;
+  height: 484px;
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
+
+  .featured-button {
+    padding: 25px 100px;
+    background-color: $brand-primary;
+  }
+
+  .title {
+    font-size: 4rem;
+    font-style: italic;
+    position: absolute;
+    top: 334px;
+    left: -90px;
+
+    h2 {
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+
+    h4 {
+      margin-left: 62px;
+      font-weight: 500;
+
+    }
+  }
+
+  .view {
+    @include button-size(20px, 90px, 1.414rem, 1.414rem, 0);
+    font-weight: 500;
+    position: absolute;
+    top: 349px;
+    right: -73px;
+  }
+
+  .accent {
+    height: 254px;
+    width: 31px;
+    background-color: $brand-secondary;
+    position: absolute;
+    top: -63px;
+    left: 59px;
+  }
+
+  .accent-diamond {
+    height: 251px;
+    width: 251px;
+    border: 31px solid $brand-secondary;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -115px;
+    left: 7px;
+  }
+
+  .iphone {
+    position: absolute;
+    top: - 26px;
+    right: 89px;
+    width: 260px;
+  }
+
+  .macbook {
+    position: absolute;
+    top: -63px;
+    right: 0;
+    width: 841px;
+  }
+
+}
+
+.s-offset-1 {
+  box-shadow: 14px 13px 80px 14px rgba(0,0,0,0.14);
+}

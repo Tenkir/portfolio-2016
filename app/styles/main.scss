@@ -1,0 +1,103 @@
+$icon-font-path: '../fonts/';
+@import "_variables";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
+
+p {
+ font-size:  1rem;
+}
+
+h6 {
+  font-size: 0.5rem;
+}
+
+h5 {
+  font-size: 0.707rem;
+}
+
+h4 {
+  font-size: 1.414rem;
+}
+
+h3 {
+  font-size: 1.999rem;
+}
+
+h2 {
+  font-size: 2.827rem;
+}
+
+h1 {
+  font-size: 3.998rem;
+}
+
+@import "_utilities";
+@import "_surface";
+
+html {
+  font-size: 16px;
+}
+body {
+  background-color: $brand-third;
+  color: $gray-light;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.footer {
+  color: #777;
+  height: 486px;
+
+  background-image: url('/images/dither_vert.png');
+  background-size: cover;
+  background-position: 50% 50px;
+  background-repeat: no-repeat;
+
+  &:before {
+    border-top: 4px solid $gray-light;
+    content: '';
+    width: 80%;
+    max-width: 1211px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .footer-brand {
+    margin: 0;
+    float: left;
+    padding: 0;
+
+    li {
+      display: inline;
+      list-style: none;
+      float: left;
+      margin: 20px auto;
+    }
+  }
+}
+
+
+.nav-logo {
+  width: 198px;
+  padding-top: 17px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-navbar;
+  background-color: $navbar-default-bg;
+  width: 100%;
+  border-bottom: 1px solid $gray-light;
+}
+
+.btn {
+  @include transition(all 100ms ease-in-out);
+}
+
+.btn-cta {
+  @include button-variant(#fffff, $brand-primary, transparent);
+  @include button-size(17px, 70px, $font-size-base, $line-height-base, $border-radius-base);
+}
