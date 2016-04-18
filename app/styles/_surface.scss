@@ -21,6 +21,40 @@
   }
 }
 
+.s-cross {
+  color: $brand-secondary;
+  font-size: 104px;
+  font-weight: 700;
+  position: absolute;
+  font-style: italic;
+  z-index: -1;
+  margin: 0 auto;
+}
+
+.s-center-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.s-bg-primary {
+  background-color: $brand-primary;
+}
+
+.s-accent {
+  width: 42px;
+  height: 720px;
+  transform: rotate(30deg);
+  background-color: $brand-primary;
+  left: 50%;
+  z-index: -1;
+  top: -100px;
+  position: absolute;
+}
+
+.s-text-shadow {
+  text-shadow: 2px 3px 0 #ffffff;
+}
+
 .s-featured {
   max-width: 968px;
   height: 484px;
@@ -92,6 +126,50 @@
     right: 0;
     width: 841px;
   }
+}
+
+.bg-icons {
+  overflow: hidden;
+
+  .bg-icon {
+    position: absolute;
+    z-index: -1;
+    will-change: transform;
+    transform: translate(0);
+    transition: 1s linear transform;
+    &.bg-icon-1 {
+      height: 15px;
+      width: 15px;
+      background-image: url('/images/square.svg');
+    }
+    &.bg-icon-0 {
+      height: 12px;
+      width: 6px;
+      background-image: url('/images/bg-icon0.svg');
+    }
+    &.bg-icon-0 {
+      height: 12px;
+      width: 12px;
+      background-size: contain;
+      background-image: url('/images/bg-icon2.svg');
+    }
+  }
+}
+
+.icon-twitter {
+  background-image: url(/images/icon-twitter.svg);
+  display: block;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 24px;
+}
+
+.icon-dribbble {
+  background-image: url(/images/icon-dribbble.svg);
+  background-repeat: no-repeat;
+  display: block;
+  width: 24px;
+  height: 24px;
 
 }
 

@@ -2,7 +2,7 @@ doctype html
 html.no-js
   head
     meta(charset='utf-8')
-    title BuildBeam
+    title Jonathan Blair - Digital Designer
     meta(name='description' content='')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='apple-touch-icon-precomposed', sizes='57x57', href='favicons/apple-touch-icon-57x57.png')
@@ -25,10 +25,16 @@ html.no-js
     meta(name='msapplication-square150x150logo', content='mstile-150x150.png')
     meta(name='msapplication-wide310x150logo', content='mstile-310x150.png')
     meta(name='msapplication-square310x310logo', content='mstile-310x310.png')
-    
-    script(src='https://use.typekit.net/dmy1xas.js')
+  
     script.
-      try{Typekit.load({ async: true });}catch(e){}
+      (function(d) {
+        var config = {
+          kitId: 'dmy1xas',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
 
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
     link(rel='stylesheet' href='styles/main.css')
@@ -40,7 +46,7 @@ html.no-js
     | <!--[if lt IE 10]>
     |   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     | <![endif]-->
-
+    .u-full-page
     .container
       block content
 
@@ -51,6 +57,12 @@ html.no-js
             ul.footer-brand.s-bold.s-italic
               li
                 | © Jonathan Blair - 2016
+          .col-md-8
+            ul.footer-brand.pull-right
+              li
+                i.icon-twitter
+              li
+                i.icon-dribbble
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.

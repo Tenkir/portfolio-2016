@@ -1,6 +1,7 @@
-extends layouts/default
+extends views/layouts/default
 
 block content
+  .bg-icons
   section.row.u-pb2.u-top-section
     .col-sm-12.u-text-center
       h2.s-bold.s-italic.s-light-grey.s-name
@@ -13,18 +14,33 @@ block content
   section.row.u-main-section
     .col-sm-12
       .s-featured.s-offset-1
-        .accent.s-offset-1
-        .iphone
+        .accent.s-offset-1(data-depth="1")
+        .iphone(data-depth="2")
           img.img-responsive(src="/images/mamava_iphone.png")
         .title
           h2 Mamava x Seventh Generation
           h4 Nomination Map
-        .btn.btn-primary.view.s-offset-1
+        a.btn.btn-primary.view.s-offset-1(
+          data-depth="2",
+          href="/mamava.html"
+        )
+          | View
+  section.row.u-main-section
+    .col-sm-12
+      .s-featured.s-offset-1.s-center-bg(style="background-image: url(/images/mun-bg.jpg)")
+        .accent.s-offset-1(data-depth="1")
+        .title
+          h2 mün
+          h4 Digital Creative Studio
+        a.btn.btn-primary.view.s-offset-1(
+          data-depth="2",
+          href="/mamava.html"
+        )
           | View
   section.row.u-main-section
     .col-sm-12
       .s-featured.s-offset-1
-        .accent-diamond.s-offset-1
+        .accent-diamond.s-offset-1(data-depth="1")
         .macbook
           img.img-responsive(src="/images/bb_macbook.png")
         .title
@@ -32,4 +48,10 @@ block content
           h4 Landing Page
         .btn.btn-primary.view.s-offset-1
           | View
-    
+  section.u-main-section.u-big-container
+    .row
+      .col-sm-12.u-text-center
+        h3.s-bold Code and Creative
+    .row
+      .col-md-6.col-sm-12
+        p I explore how technology can be a tool that enables creativity. 

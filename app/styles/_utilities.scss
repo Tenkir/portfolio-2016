@@ -18,10 +18,27 @@
   text-align: center;
 }
 
+.u-center {
+  margin: 0 auto;
+}
+
 .u-top-section {
   padding: 45px 0;
 }
 
 .u-main-section {
   padding: 105px 0;
+}
+
+.u-full-page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.u-big-container {
+  max-width: 968px;
+  margin: 0 auto;
 }

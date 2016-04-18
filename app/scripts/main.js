@@ -1,115 +1,112 @@
-(function() {
-  var $ = require('jquery');
-  var validate = require('jquery-validation');
+var $ = require('jquery');
 
-  window.$ = window.jQuery = $;
+var backgroundIconArray = []
+  , depthElementArray = []
+  , lastScrollTop = 0;
 
-  var bootstrap = require('bootstrap-sass');
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-  var formHelpers = {
-    sendButtonResponse: function(btnEl, success) {
-      var delay = btnEl.hasClass('send-clicked') ? 1500 : 0
-        , noSendDelay = 2000;
+function parseMatrix(matrix) {
+  var modified = matrix.replace(/^\w+\(/,"[").replace(/\)$/,"]");
+  return JSON.parse(modified);
+}
 
-      setTimeout(function() {
-        btnEl.removeClass('send-clicked' );
-        btnEl.addClass(success ? 'send-success' : 'send-fail');
-      }, delay);
+function translateWithMatrix(x, y, matrix) {
+  var matrixString = 'matrix(';
 
+  matrix[4] = parseInt(matrix[4]) + parseInt(x);
+  matrix[5] = parseInt(matrix[5]) + parseInt(y);
 
-      setTimeout(function() {
-        btnEl.removeClass('send-fail');
-      }, delay + noSendDelay);
+  for(var i=0; i<matrix.length; i++) {
+    matrixString += matrix[i];
+
+    if(i<matrix.length-1) {
+      matrixString += ',';
     }
-  };
+  }
 
-  $('#contact-form').submit(function(e) {
-    e.preventDefault();
-  });
+  matrixString += ')';
 
-  $('[data-scrollto]').click(function(e) {
-    $('html, body').animate({
-      scrollTop: $($(e.target).data('scrollto')).offset().top
-    }, 300);
-  });
+  return matrixString;
+}
 
-  $(document).ready(function() {
-    $('#contact-form').validate({
-      rules: {
-        name: 'required',
-        email: {
-          required: true,
-          email: true
-        },
-        companyName: 'required'
-      },
-      messages: {
-        name: 'Please enter your name',
-        email: 'Please enter a valid email address',
-        companyName: 'Enter your Company Name'
-      },
-      submitHandler: function(form) {
-        var contactForm = $(form)
-          , baseUrl = 'https://script.google.com/macros/s/AKfycbzORIb3bDCNvwOy9VmgN04EQ6JxCgOcxSuY7ycGQgAV-_On690/exec'
-          , name = contactForm.find('#name')
-          , email = contactForm.find('#email')
-          , phone = contactForm.find('#phone')
-          , companySize = contactForm.find('#companySize')
-          , companyName = contactForm.find('#companyName')
-          , message = contactForm.find('#message')
-          , sendBtn = contactForm.find(':submit');
+function animateBackgroundIcons() {
+  for(var i=0; i<backgroundIconArray.length; i++) {
+    var icon = backgroundIconArray[i]
+      , currentTransform = parseMatrix(icon.element.css('transform'))
+      , newTransform = translateWithMatrix(icon.speedX, icon.speedY, currentTransform);
 
-        if(sendBtn.hasClass('send-success' || sendBtn.hasClass('send-clicked'))) {
-          return true;
-        }
-
-        sendBtn.addClass('send-clicked');
-
-        $.ajax({
-          url: baseUrl,
-          data: {
-            'name': name.val(),
-            'email': email.val(),
-            'phone': phone.val(),
-            'company-name': companyName.val(),
-            'company-size': companySize.val(),
-            'message': message.val()
-          },
-          type: 'POST',
-          dataType: 'xml',
-          success: function() {
-            name.val('');
-            email.val('');
-            phone.val('');
-            companySize.val('');
-            companyName.val('');
-            message.val('');
-
-            formHelpers.sendButtonResponse(sendBtn, true);
-          },
-          error: function(xhr, textStatus, errorThrown){
-            formHelpers.sendButtonResponse(sendBtn, true);
-          }
-        });
-      },
-      invalidHandler: function(form, validator) {
-        formHelpers.sendButtonResponse($(form.target).find(':submit'), false);
-      },
-      errorElement: "span",
-      errorClass: "help-block",
-      highlight: function(element, errorClass, validClass) {
-        $(element).closest('.form-group').addClass('has-error');
-      },
-      unhighlight: function(element, errorClass, validClass) {
-        $(element).closest('.form-group').removeClass('has-error');
-      },
-      errorPlacement: function(error, element) {
-        if (element.parent('.input-group').length || element.prop('type') === 'checkbox' || element.prop('type') === 'radio') {
-          error.insertAfter(element.parent());
-        } else {
-          error.insertAfter(element);
-        }
-      }
+    icon.element.css({
+      'transform': newTransform
     });
-  })
-})();
+  }
+
+  setTimeout(function(){
+    animateBackgroundIcons();
+  }, 1000);
+}
+
+$('document').ready(function() {
+  depthElementArray = $('*[data-depth]');
+
+  for(var i=0; i<depthElementArray.length; i++) {
+    $(depthElementArray[i]).css('transform', 'translate(0)');
+  }
+
+  if($('.bg-icons').length) {
+    var numBackgroundElements = 25
+      , availableBackgroundIcons = 2
+      , backgroundIconsElement = $('.bg-icons')
+      , documentHeight = $('body').height()
+      , documentWidth = $('body').width()
+      , maxSpeed = 6;
+
+    for(var i=0; i<numBackgroundElements; i++) {
+      var iconVersion = randomNumber(0, availableBackgroundIcons)
+        , iconElement = $(document.createElement('span'))
+        , top = randomNumber(0, documentHeight)
+        , left = randomNumber(0, documentWidth);
+
+      iconElement.addClass('bg-icon bg-icon-' + iconVersion);
+      iconElement.css({
+        'top': top,
+        'left': left
+      });
+
+      var iconObject = {
+        element: iconElement,
+        speedX: randomNumber(-maxSpeed, maxSpeed),
+        speedY: randomNumber(-maxSpeed, maxSpeed)
+      }
+
+      backgroundIconArray.push(iconObject);
+      backgroundIconsElement.append(iconElement);
+
+      animateBackgroundIcons();
+    }
+  }
+});
+
+$(document).scroll(function(e) {
+  var currentScrollTop = $(this).scrollTop()
+    , moveAmmount = currentScrollTop - lastScrollTop;
+
+  for(var i=0; i<depthElementArray.length; i++) {
+    var depthElement = $(depthElementArray[i])
+      , currentTransform = parseMatrix(depthElement.css('transform'))
+      , coefficient = 0.1;
+
+    var newTransform = translateWithMatrix(
+      0,
+      Math.round(-moveAmmount * coefficient * depthElement.data('depth')),
+      currentTransform
+    );
+    depthElement.css({
+      'transform': newTransform
+    });
+  }
+
+  lastScrollTop = currentScrollTop;
+});

@@ -37,8 +37,22 @@ html {
   font-size: 16px;
 }
 body {
-  background-color: $brand-third;
+  //background-color: $brand-third;
   color: $gray-light;
+  opacity: 1;
+  transition: opacity .4s ease-in-out;
+
+  & .wf-loading {
+    opacity: 0;
+  }
+}
+
+hr {
+  width: 80%;
+  height: 5px;
+  border: none;
+  background-color: $brand-primary;
+  margin-left: 0;
 }
 
 .container-fluid {
