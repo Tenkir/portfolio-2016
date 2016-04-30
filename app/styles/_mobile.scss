@@ -1,0 +1,51 @@
+@media(max-width: $screen-md-max) {
+  .u-top-section {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .s-featured {
+    height: 520px;
+
+    .iphone {
+      width: 160px;
+      top: -39px;
+      right: 20px;
+    }
+
+    .macbook {
+      width: 350px;
+      max-width: 100%;
+      position: relative;
+      right: auto;
+      top: 50px;
+      margin: 0 auto;
+    }
+
+    .title {
+      width: calc(100% - 40px);
+      left: 20px;
+      top: 290px;
+    }
+
+    .view {
+      top: 510px;
+      right: 20px;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .s-featured {
+    height: 540px;
+  }
+
+  .view {
+    top: 510px;
+  }
+
+  .s-mamava {
+    font-size: 2rem;
+  }
+}

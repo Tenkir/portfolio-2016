@@ -10,11 +10,15 @@
   color: $gray-light;
 }
 
-.s-name {
-  margin-left: 80px;
+.s-header {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 6rem;
+  position: relative;
+  left: 40px;
+  max-width: 100%;
 
-  .s-blair {
+  .s-header-line2 {
     position: relative;
     top: 30px;
     left: -77px;
@@ -66,6 +70,14 @@
 
 .s-text-shadow {
   text-shadow: 2px 3px 0 #ffffff;
+}
+
+.s-mamava {
+  @extend .s-header;
+
+  .s-header-line2 {
+
+  }
 }
 
 .s-featured {
