@@ -8,6 +8,9 @@
 .m0 { margin: 0; }
 .pb0 { padding-bottom: 0; }
 
+.mt1 { margin-top: $font-size-h1; }
+.mt2 { margin-top: $font-size-h2; }
+
 .u-pb2 { padding-bottom: 2rem; }
 .u-mb2 { margin-bottom: 2rem; }
 .u-mb6 { margin-bottom: 6rem; }
@@ -27,7 +30,15 @@
 }
 
 .u-main-section {
-  padding: 105px 0;
+  padding: 180px 0;
+}
+
+.u-secondary-section {
+  padding: 90px 0;
+}
+
+.u-main-section {
+  padding: 180px 0;
 }
 
 .u-full-page {

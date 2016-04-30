@@ -2,7 +2,8 @@ var $ = require('jquery');
 
 var backgroundIconArray = []
   , depthElementArray = []
-  , lastScrollTop = 0;
+  , lastScrollTop = 0
+  , navElement = {};
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -49,6 +50,7 @@ function animateBackgroundIcons() {
 }
 
 $('document').ready(function() {
+  navElement = $('nav');
   depthElementArray = $('*[data-depth]');
 
   for(var i=0; i<depthElementArray.length; i++) {
@@ -56,7 +58,7 @@ $('document').ready(function() {
   }
 
   if($('.bg-icons').length) {
-    var numBackgroundElements = 25
+    var numBackgroundElements = 40
       , availableBackgroundIcons = 2
       , backgroundIconsElement = $('.bg-icons')
       , documentHeight = $('body').height()
@@ -89,7 +91,7 @@ $('document').ready(function() {
   }
 });
 
-$(document).scroll(function(e) {
+function moveDepthElements() {
   var currentScrollTop = $(this).scrollTop()
     , moveAmmount = currentScrollTop - lastScrollTop;
 
@@ -109,4 +111,20 @@ $(document).scroll(function(e) {
   }
 
   lastScrollTop = currentScrollTop;
+}
+
+$(document).scroll(moveDepthElements());
+
+$(document).bind('touchmove', function(e) {
+  moveDepthElements();
+
+  if($('nav').hasClass('open')) {
+    e.preventDefault();
+  }
+});
+
+$("#toggle").click(function(e) {
+  e.preventDefault();
+  $('body').toggleClass('clip');
+  $('nav').toggleClass('open');
 });

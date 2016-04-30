@@ -4,7 +4,7 @@ html.no-js
     meta(charset='utf-8')
     title Jonathan Blair - Digital Designer
     meta(name='description' content='')
-    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     link(rel='apple-touch-icon-precomposed', sizes='57x57', href='favicons/apple-touch-icon-57x57.png')
     link(rel='apple-touch-icon-precomposed', sizes='114x114', href='favicons/apple-touch-icon-114x114.png')
     link(rel='apple-touch-icon-precomposed', sizes='72x72', href='favicons/apple-touch-icon-72x72.png')
@@ -46,6 +46,21 @@ html.no-js
     | <!--[if lt IE 10]>
     |   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     | <![endif]-->
+    nav#nav(role="navigation")
+      .bar
+        a(href="/").nav-logo
+          | Jonathan
+          span Blair
+        a(href="#")#toggle
+          .hamburger
+      .nav-background
+        ul
+          #nav-message.hidden-sm
+            | Hello.
+          li 
+            a(href="/") Home
+            a(href="#") Contact
+            a(href="#") Blog
     .u-full-page
     .container
       block content
@@ -59,8 +74,9 @@ html.no-js
                 | © Jonathan Blair - 2016
           .col-md-8
             ul.footer-brand.pull-right
-              li
-                i.icon-twitter
+              a(href="http://twitter.com/knoland_frctr")
+                li
+                  i.icon-twitter
               li
                 i.icon-dribbble
 
