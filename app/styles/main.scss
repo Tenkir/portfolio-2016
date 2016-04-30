@@ -46,13 +46,14 @@ html {
 }
 
 body {
-  //background-color: $brand-third;
   color: $gray-light;
-  opacity: 1;
-  transition: opacity .4s ease-in-out;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
 
-  & .wf-loading {
-    opacity: 0;
+.wf-active {
+  body {
+    opacity: 1;
   }
 }
 
@@ -78,13 +79,12 @@ hr {
   background-position: 50% 50px;
   background-repeat: no-repeat;
 
-  &:before {
-    border-top: 4px solid $gray-light;
-    content: '';
-    width: 80%;
-    max-width: 1211px;
-    margin: 0 auto;
-    display: block;
+  .container {
+    &:before {
+      border-top: 4px solid $gray-light;
+      content: '';
+      display: block;
+    }
   }
 
   .footer-brand {
@@ -96,7 +96,11 @@ hr {
       display: inline;
       list-style: none;
       float: left;
-      margin: 20px auto;
+      margin: 20px 15px 20px 0;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
 }

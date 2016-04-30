@@ -123,7 +123,7 @@ $(document).bind('touchmove', function(e) {
   }
 });
 
-$("#toggle").click(function(e) {
+$('#toggle').click(function(e) {
   e.preventDefault();
   $('body').toggleClass('clip');
   $('nav').toggleClass('open');

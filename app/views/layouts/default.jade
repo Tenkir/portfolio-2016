@@ -41,7 +41,6 @@ html.no-js
     
 
 
-
   body
     | <!--[if lt IE 10]>
     |   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -59,7 +58,7 @@ html.no-js
             | Hello.
           li 
             a(href="/") Home
-            a(href="#") Contact
+            a(href="/contact.html") Contact
             a(href="#") Blog
     .u-full-page
     .container
@@ -74,11 +73,12 @@ html.no-js
                 | © Jonathan Blair - 2016
           .col-md-8
             ul.footer-brand.pull-right
-              a(href="http://twitter.com/knoland_frctr")
-                li
+              li
+                a(href="http://twitter.com/knoland_frctr")
                   i.icon-twitter
               li
-                i.icon-dribbble
+                a(href="https://dribbble.com/Knoland")
+                  i.icon-dribbble
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.
