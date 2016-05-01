@@ -1,6 +1,7 @@
 $icon-font-path: '../fonts/';
 @import "_variables";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "_animations";
 
 p {
  font-size:  1rem;
@@ -36,7 +37,7 @@ h1 {
 @import "_mobile";
 
 html {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .clip {
@@ -46,14 +47,47 @@ html {
 }
 
 body {
-  color: $gray-light;
+  height: 100%;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transition: opacity .5s ease-in-out;
+
+  &:after {
+    content: '';
+    display: block;
+    width: $loading-border-width-x * 2;
+    height: $loading-border-width-y * 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -($loading-border-width-y);
+    margin-left:-($loading-border-width-x);
+    border: ($loading-border-width-y / 2) solid $loading-border-color-2;
+    animation: loading-spinner 400ms ease infinite;
+    transition: border-color .4s ease;
+  }
+}
+
+.loading-hide {
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity .5s ease-in-out;
 }
 
 .wf-active {
-  body {
+  .loading-hide {
     opacity: 1;
+  }
+
+  .loading-spinner {
+    opacity:0;
+    z-index: -1000;
   }
 }
 
@@ -269,7 +303,6 @@ nav {
       visibility: visible;
       opacity: 1;
       margin-top: 0;
-      transform: perspective(600px) rotateX(0deg);
     }
 
     #toggle {

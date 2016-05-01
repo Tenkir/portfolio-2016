@@ -30,7 +30,7 @@ $brand-danger:          #E76E63 !default;
 //** Background color for `<body>`.
 $body-bg:               #fff !default;
 //** Global text color on `<body>`.
-$text-color:            $gray-dark !default;
+$text-color:            $gray-light !default;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
@@ -873,3 +873,10 @@ $dl-horizontal-offset:        $component-offset-horizontal !default;
 $dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
+
+
+//== Custom
+$loading-border-width-x: 30px;
+$loading-border-width-y: 30px;
+$loading-border-color-1: transparentize($brand-primary, 0.8);
+$loading-border-color-2: $brand-primary;

@@ -45,40 +45,41 @@ html.no-js
     | <!--[if lt IE 10]>
     |   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     | <![endif]-->
-    nav#nav(role="navigation")
-      .bar
-        a(href="/").nav-logo
-          | Jonathan
-          span Blair
-        a(href="#")#toggle
-          .hamburger
-      .nav-background
-        ul
-          #nav-message.hidden-sm
-            | Hello.
-          li 
-            a(href="/") Home
-            a(href="/contact.html") Contact
-            a(href="#") Blog
-    .u-full-page
-    .container
-      block content
-
-    .footer
+    .loading-spinner
+    .loading-hide
+      nav#nav(role="navigation")
+        .bar
+          a(href="/").nav-logo
+            | Jonathan
+            span Blair
+          a(href="#")#toggle
+            .hamburger
+        .nav-background
+          ul
+            #nav-message.hidden-sm
+              | Hello.
+            li 
+              a(href="/") Home
+              a(href="/contact.html") Contact
+              a(href="#") Blog
       .container
-        .row
-          .col-md-4
-            ul.footer-brand.s-bold.s-italic
-              li
-                | © Jonathan Blair - 2016
-          .col-md-8
-            ul.footer-brand.pull-right
-              li
-                a(href="http://twitter.com/knoland_frctr")
-                  i.icon-twitter
-              li
-                a(href="https://dribbble.com/Knoland")
-                  i.icon-dribbble
+        block content
+
+      .footer
+        .container
+          .row
+            .col-md-4
+              ul.footer-brand.s-bold.s-italic
+                li
+                  | © Jonathan Blair - 2016
+            .col-md-8
+              ul.footer-brand.pull-right
+                li
+                  a(href="http://twitter.com/knoland_frctr")
+                    i.icon-twitter
+                li
+                  a(href="https://dribbble.com/Knoland")
+                    i.icon-dribbble
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.
