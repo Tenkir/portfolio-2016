@@ -5,7 +5,7 @@ $icon-font-path: '../fonts/';
 
 p {
  font-size:  1rem;
- font-family: 'ff-tisa-web-pro', serif;
+ font-family: $font-family-serif;
 }
 
 h6 {
@@ -30,6 +30,10 @@ h2 {
 
 h1 {
   font-size: 3.998rem;
+}
+
+textarea {
+  resize: vertical;
 }
 
 @import "_utilities";
@@ -70,7 +74,7 @@ body {
     margin-top: -($loading-border-width-y);
     margin-left:-($loading-border-width-x);
     border: ($loading-border-width-y / 2) solid $loading-border-color-2;
-    animation: loading-spinner 400ms ease infinite;
+    animation: loading-spinner 750ms ease infinite;
     transition: border-color .4s ease;
   }
 }

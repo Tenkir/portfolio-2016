@@ -8,8 +8,10 @@
 .m0 { margin: 0; }
 .pb0 { padding-bottom: 0; }
 
+.mt0 { margin-top: 0; }
 .mt1 { margin-top: $font-size-h1; }
 .mt2 { margin-top: $font-size-h2; }
+.u-mt2 { margin-top: 2rem;}
 
 .u-pb2 { padding-bottom: 2rem; }
 .u-mb2 { margin-bottom: 2rem; }
@@ -19,6 +21,10 @@
 .u-absolute { position: absolute; }
 .u-text-center {
   text-align: center;
+}
+
+.u-left-align {
+  margin-left: 0;
 }
 
 .u-center {
