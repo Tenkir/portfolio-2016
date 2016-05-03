@@ -1,0 +1,22 @@
+@keyframes loading-spinner {
+  0% {
+    border-color: $loading-border-color-1;
+    border-top-color: $loading-border-color-2;
+  }
+  25% {
+    border-color: $loading-border-color-1;
+    border-right-color: $loading-border-color-2;
+  }
+  50% {
+    border-color: $loading-border-color-1;
+    border-bottom-color: $loading-border-color-2;
+  }
+  75% {
+    border-color: $loading-border-color-1;
+    border-left-color: $loading-border-color-2;
+  }
+  100% {
+    border-color: $loading-border-color-1;
+    border-top-color: $loading-border-color-2;
+  }
+}

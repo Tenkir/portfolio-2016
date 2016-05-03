@@ -1,0 +1,46 @@
+extends layouts/default
+
+block content
+  section.row.u-pb2.u-top-section
+    .col-sm-12.u-text-center
+      h2.s-bold.s-italic.s-light-grey.s-mamava.s-text-shadow
+        span
+          | Mamava
+          span.s-cross
+            | X
+        span.s-header-line2
+          | Seventh Generation
+      h4
+        | Conception / UX / Visual / Code
+      a(href="http://map.mamava.com") View Live
+  section.row.u-secondary-section
+    .col-sm-12
+      .s-accent
+      img.u-center.img-responsive(src="/images/mamava_iphone.png")
+  hr
+  section.row.u-secondary-section
+    .col-sm-12
+      p Working with Mamava, I was excited to use design and technology to help change the culture around breastfeeding. They wanted a tool to show potential customers their current locations. I pitched them to idea to not only showcase their current locations, but give moms the power to nominate their favorite places for future mamavas. With this tool, the Mavama sales team is now able to show potential customers the existing demand from people in the community.
+      p We wanted to empower mamas to build grassroots campaigns to bring Mamava to their communities. So we created a tool that gave them the power to plant their flag and announce to the world that they deserved a proper place to pump.
+      h3.mt2
+        strong
+          | Overview
+      p The Mamava Mamamap allows moms to nominate locations in their community that need Mamava Lactation Stations. Using the web app, moms can add their malls, airports, and offices and begin their own campaign to get Mamava.
+      p Once a mom has added a location to the Mamamap, she is given a campaign toolkit, customized to her and her nominated location. She can then print off dropcards to leave around the location’s bathrooms, letters to send to the facilities managers, and more.
+      p Once a location is nominated, other moms can voice their support. By selecting a location on the map that has already been nominated, moms can vote and comment on it.
+      .s-featured-img
+        img.u-center.img-responsive(src="/images/mmv_svg_screen.png")
+        h5 Map with Nominated Locations
+      h3.mt2
+        strong
+          | Process
+      p I began the design process by talking to moms, both those who breastfeed, and those who use formula to learn what kinds of issues they had with breastfeeding in public.
+      .s-featured-img
+        img.u-center.img-responsive(src="/images/mamava-laptop.jpg")
+        h5 Map with Nominated Locations
+      h3.mt2
+        strong
+          | Tech
+      p This campaign is built as a single page web app with a full Javascript tech stack. Sails.js handles the models and controllers on the backend to generate REST API’s while Angular.js handles the views and controllers on the frontend and makes calls to the backend. MongoDB is being used to store data for scaleability.
+      p Tech stack: Angular.js, Node.js, Sails.js, Grunt, Bower, mongoDB
+      p Full REST API for backend.

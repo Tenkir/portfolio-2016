@@ -1,0 +1,212 @@
+.s-italic {
+  font-style: italic;
+}
+
+.s-bold {
+  font-weight: bold;
+}
+
+.s-light-grey {
+  color: $gray-light;
+}
+
+.s-weak {
+  font-weight: 300;
+}
+
+.s-header {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6rem;
+  position: relative;
+  left: 40px;
+  max-width: 100%;
+
+  .s-header-line2 {
+    position: relative;
+    top: 30px;
+    left: -77px;
+  }
+}
+
+.s-featured-img {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.s-cross {
+  color: $brand-secondary;
+  font-size: 104px;
+  font-weight: 700;
+  position: absolute;
+  font-style: italic;
+  z-index: -1;
+  margin: 0 auto;
+}
+
+.s-center-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.s-bg-primary {
+  background-color: $brand-primary;
+}
+
+.s-lighten-bg {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    opacity: .5;
+  }
+}
+.s-accent {
+  width: 42px;
+  height: 720px;
+  transform: rotate(30deg);
+  background-color: $brand-primary;
+  left: 50%;
+  z-index: -1;
+  top: -87px;
+  position: absolute;
+}
+
+.s-text-shadow {
+  text-shadow: 2px 3px 0 #ffffff;
+}
+
+.s-mamava {
+  @extend .s-header;
+
+  .s-header-line2 {
+
+  }
+}
+
+.s-featured {
+  max-width: 968px;
+  height: 484px;
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
+
+  .featured-button {
+    padding: 25px 100px;
+    background-color: $brand-primary;
+  }
+
+  .title {
+    font-size: 4rem;
+    font-style: italic;
+    position: absolute;
+    top: 334px;
+    left: -90px;
+
+    h2 {
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+
+    h4 {
+      margin-left: 62px;
+      font-weight: 500;
+
+    }
+  }
+
+  .view {
+    @include button-size(20px, 90px, 1.414rem, 1.414rem, 0);
+    font-weight: 500;
+    position: absolute;
+    top: 349px;
+    right: -73px;
+  }
+
+  .accent {
+    height: 254px;
+    width: 31px;
+    background-color: $brand-secondary;
+    position: absolute;
+    top: -63px;
+    left: 59px;
+  }
+
+  .accent-diamond {
+    height: 251px;
+    width: 251px;
+    border: 31px solid $brand-secondary;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -115px;
+    left: 7px;
+  }
+
+  .iphone {
+    position: absolute;
+    top: - 26px;
+    right: 89px;
+    width: 260px;
+  }
+
+  .macbook {
+    position: absolute;
+    top: -63px;
+    right: 0;
+    width: 841px;
+  }
+}
+
+.bg-icons {
+  overflow: hidden;
+
+  .bg-icon {
+    position: absolute;
+    z-index: -1;
+    will-change: transform;
+    transform: translate(0);
+    transition: 1s linear transform;
+    &.bg-icon-1 {
+      height: 15px;
+      width: 15px;
+      background-image: url('/images/square.svg');
+    }
+    &.bg-icon-0 {
+      height: 12px;
+      width: 6px;
+      background-image: url('/images/bg-icon0.svg');
+    }
+    &.bg-icon-0 {
+      height: 12px;
+      width: 12px;
+      background-size: contain;
+      background-image: url('/images/bg-icon2.svg');
+    }
+  }
+}
+
+.icon-twitter {
+  background-image: url(/images/icon-twitter.svg);
+  display: block;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 24px;
+}
+
+.icon-dribbble {
+  background-image: url(/images/icon-dribbble.svg);
+  background-repeat: no-repeat;
+  display: block;
+  width: 24px;
+  height: 24px;
+
+}
+
+.s-offset-1 {
+  box-shadow: 14px 13px 80px 14px rgba(0,0,0,0.14);
+}

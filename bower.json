@@ -1,0 +1,21 @@
+{
+  "name": "btv-tech",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.1",
+    "bootstrap-sass": "~3.3.5",
+    "jquery": "^2.2.1",
+    "jquery-validation": "^1.15.0"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.4.2",
+    "mocha": "~2.3.4"
+  }
+}

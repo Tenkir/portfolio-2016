@@ -1,0 +1,63 @@
+extends layouts/default
+
+block content
+  section.row.u-pb2.u-top-section
+    .col-sm-12.u-text-center
+      h2.s-bold.s-italic.s-light-grey
+        | From Nothing, Create Something Great.
+  section.row.u-secondary-section
+    .col-sm-12
+      h4.mt0 I'm a digital product designer and developer. I'm obsessed with merging tech and creative in unexpected ways. 
+      h4.u-mt2 I moved to Burlington, VT to attend Champlain College. While there I founded Fractor with my business partner in Boston, MA. We worked with startups like Barnes Mcqueen Publishing Resources, Champlain College Publishing Initiative, Burlington City Arts, and many more. After college I interned at Solidarity of Unbridled Labour as their interactive media intern. During this time I collaborated with Mamava. After my term at Solidarity, I joined daftlabs to build and grow their creative department. There I've teamed up with extremely talented developers to overhaul the product workflow. 
+      h4.u-mt2 I love what I do, and look forward to where life will take me next.
+  section.row.u-secondary-section
+    .col-sm-12
+      h3.mt2
+        strong
+          | Places I've Been a Part
+      hr.u-left-align
+      h4.mt2 mün
+      h4.s-weak Founder
+      p Studio for digital creativity. Work with other creatives in Burlington, VT to create digital works of art that stengthen and grow the local community.
+      a(href="http://daftlabs.com")
+        h4.mt2 daftlabs
+      h4.s-weak Product Designer
+      p Currently building and designing our product department. Working closely with the development team to create our workflow and process.
+      a(href="http://designsolidarity.com")
+        h4.mt2 Solidarity of Unbridled Labour
+      h4.s-weak Interactive Media Intern
+      p Collaborated with Mamava to design and create a social platform for marketing and sales. Utilized Framer.js and Sketch 3 to develop rapid prototypes;
+      a(href="http://thinkfractor.com")
+        h4.mt2 Fractor LLC
+      h4.s-weak Founder, Creative Lead
+      p I founded Fractor in Boston, MA to creative creative, digital advertising campaigns. I lead the creative output team of strategists, designers, and developers. I also worked with my business partner to pitch and land clients.
+  section.row.u-secondary-section
+    .col-sm-12
+      h3
+        strong
+          | Lets Create Something Together
+      hr.u-left-align
+      h4 You can reach me at:
+      h4 Phone: (603) 769-0571
+      h4 Email: jonathan@jblairdesign.com
+      
+      h4.mt2 (or fill out this form)
+      form(method="post", name="contact_form", action="https://script.google.com/macros/s/AKfycbzORIb3bDCNvwOy9VmgN04EQ6JxCgOcxSuY7ycGQgAV-_On690/exec")
+        .form-group
+          label(for="contact-name", required="true")
+            | Your Name*
+          input#contact-name.form-control(placeholder="Your Name")
+        .form-group
+          label(for="contact-email", required="true")
+            | Your Email*
+          input#contact-email.form-control(type="email", placeholder="your@email.com")
+        .form-group
+          label(for="contact-phone")
+            | Your Phone
+          input#contact-phone.form-control(placeholder="(123) 123-1234")
+        .form-group
+          label(for="contact-text")
+            |Your Message
+          textarea#contact-text.form-control(placeholder="Hi Jon, I love you work...")
+        button.btn.btn-primary(type="submit")
+          | Send It Out
