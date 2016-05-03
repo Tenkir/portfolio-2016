@@ -8,9 +8,13 @@
 Clone Repo
 
 `npm i`
+
 `npm i -g gulp-cli`
+
 `npm i -g bower`
+
 `bower i`
+
 `gulp serve`
 
 ## Build The Things
