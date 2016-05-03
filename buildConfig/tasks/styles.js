@@ -1,9 +1,17 @@
 var paths = require('../paths');
+import gutil from 'gulp-util';
+
+var onError = function (err) {
+  gutil.beep();
+  console.log(err);
+};
 
 module.exports = function(gulp, $, reload, gutil) {
   return function() {
     return gulp.src(paths.srcPaths.styles + '/**/*.scss')
-      .pipe($.plumber())
+      .pipe($.plumber({
+        errorHandler: onError
+      }))
       .pipe(gutil.env.prod ? gutil.noop() : $.sourcemaps.init())
       .pipe($.sass.sync({
         outputStyle: 'expanded',
