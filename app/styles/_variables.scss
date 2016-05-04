@@ -880,3 +880,5 @@ $loading-border-width-x: 30px;
 $loading-border-width-y: 30px;
 $loading-border-color-1: transparentize($brand-primary, 0.8);
 $loading-border-color-2: $brand-primary;
+
+$cubic-curve: cubic-bezier(0.7, 0.01, 0.3, 1);
