@@ -37,10 +37,21 @@ function animateBackgroundIcons() {
   for(var i=0; i<backgroundIconArray.length; i++) {
     var icon = backgroundIconArray[i]
       , currentTransform = parseMatrix(icon.element.css('transform'))
-      , newTransform = translateWithMatrix(icon.speedX, icon.speedY, currentTransform);
+      , bodyElement = $('body')
+      , bodyWidth = bodyElement.width()
+      , bodyHeight = bodyElement.height()
+      , iconElement = icon.element;
+
+    if (iconElement.offset().left + icon.speedX < 0 || iconElement.offset().left + icon.speedX > bodyWidth) {
+      icon.speedX *= -1;
+    }
+
+    if (iconElement.offset().top + icon.speedY < 0 || iconElement.offset().top + icon.speedY > bodyWidth) {
+      icon.speedY *= -1;
+    }
 
     icon.element.css({
-      'transform': newTransform
+      'transform': translateWithMatrix(icon.speedX, icon.speedY, currentTransform)
     });
   }
 
