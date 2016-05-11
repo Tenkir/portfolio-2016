@@ -29,6 +29,21 @@
   }
 }
 
+.s-hover-zoom {
+  transform: scale(1);
+  position: relative;
+  &:hover {
+    .content {
+      z-index: 999;
+      transform: scale(1.1);
+    }
+  }
+
+  .content {
+    transition: transform 0.6s $cubic-curve;
+  }
+}
+
 .s-featured-img {
   margin: 3rem 0;
   text-align: center;
@@ -208,5 +223,6 @@
 }
 
 .s-offset-1 {
+  display: block;
   box-shadow: 14px 13px 80px 14px rgba(0,0,0,0.14);
 }
