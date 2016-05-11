@@ -1,9 +1,10 @@
+'use strict';
+
 var $ = require('jquery');
 
 var backgroundIconArray = []
   , depthElementArray = []
-  , lastScrollTop = 0
-  , navElement = {};
+  , lastScrollTop = 0;
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -20,10 +21,10 @@ function translateWithMatrix(x, y, matrix) {
   matrix[4] = parseInt(matrix[4]) + parseInt(x);
   matrix[5] = parseInt(matrix[5]) + parseInt(y);
 
-  for(var i=0; i<matrix.length; i++) {
+  for (var i = 0; i < matrix.length; i++) {
     matrixString += matrix[i];
 
-    if(i<matrix.length-1) {
+    if (i < matrix.length - 1) {
       matrixString += ',';
     }
   }
@@ -34,7 +35,7 @@ function translateWithMatrix(x, y, matrix) {
 }
 
 function animateBackgroundIcons() {
-  for(var i=0; i<backgroundIconArray.length; i++) {
+  for (var i = 0; i < backgroundIconArray.length; i++) {
     var icon = backgroundIconArray[i]
       , currentTransform = parseMatrix(icon.element.css('transform'))
       , bodyElement = $('body')
@@ -46,7 +47,7 @@ function animateBackgroundIcons() {
       icon.speedX *= -1;
     }
 
-    if (iconElement.offset().top + icon.speedY < 0 || iconElement.offset().top + icon.speedY > bodyWidth) {
+    if (iconElement.offset().top + icon.speedY < 0 || iconElement.offset().top + icon.speedY > bodyHeight) {
       icon.speedY *= -1;
     }
 
@@ -61,14 +62,13 @@ function animateBackgroundIcons() {
 }
 
 $('document').ready(function() {
-  navElement = $('nav');
   depthElementArray = $('*[data-depth]');
 
-  for(var i=0; i<depthElementArray.length; i++) {
+  for (var i = 0; i < depthElementArray.length; i++) {
     $(depthElementArray[i]).css('transform', 'translate(0)');
   }
 
-  if($('.bg-icons').length) {
+  if ($('.bg-icons').length) {
     var numBackgroundElements = 40
       , availableBackgroundIcons = 2
       , backgroundIconsElement = $('.bg-icons')
@@ -76,7 +76,7 @@ $('document').ready(function() {
       , documentWidth = $('body').width()
       , maxSpeed = 6;
 
-    for(var i=0; i<numBackgroundElements; i++) {
+    for (var j = 0; j < numBackgroundElements; j++) {
       var iconVersion = randomNumber(0, availableBackgroundIcons)
         , iconElement = $(document.createElement('span'))
         , top = randomNumber(0, documentHeight)
@@ -92,7 +92,7 @@ $('document').ready(function() {
         element: iconElement,
         speedX: randomNumber(-maxSpeed, maxSpeed),
         speedY: randomNumber(-maxSpeed, maxSpeed)
-      }
+      };
 
       backgroundIconArray.push(iconObject);
       backgroundIconsElement.append(iconElement);
@@ -102,11 +102,11 @@ $('document').ready(function() {
   }
 });
 
-function moveDepthElements() {
+function moveDepthElements () {
   var currentScrollTop = $(this).scrollTop()
     , moveAmmount = currentScrollTop - lastScrollTop;
 
-  for(var i=0; i<depthElementArray.length; i++) {
+  for (var i = 0; i < depthElementArray.length; i++) {
     var depthElement = $(depthElementArray[i])
       , currentTransform = parseMatrix(depthElement.css('transform'))
       , coefficient = 0.1;
@@ -129,7 +129,7 @@ $(document).scroll(moveDepthElements());
 $(document).bind('touchmove', function(e) {
   moveDepthElements();
 
-  if($('nav').hasClass('open')) {
+  if ($('nav').hasClass('open')) {
     e.preventDefault();
   }
 });
