@@ -6,6 +6,8 @@ $icon-font-path: '../fonts/';
 p {
  font-size:  1rem;
  font-family: $font-family-serif;
+ margin-top: 29px;
+ margin-bottom: 0;
 }
 
 h6 {
@@ -31,6 +33,7 @@ h2 {
 h1 {
   font-size: 3.998rem;
 }
+
 
 textarea {
   resize: vertical;
