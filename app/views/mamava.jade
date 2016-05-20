@@ -20,27 +20,34 @@ block content
   hr
   section.row.u-secondary-section
     .col-sm-12
-      p Working with Mamava, I was excited to use design and technology to help change the culture around breastfeeding. They wanted a tool to show potential customers their current locations. I pitched them the idea to not only showcase their current locations, but give moms the power to nominate their favorite places for future mamavas. With this tool, the Mavama sales team is now able to show potential customers the existing demand from people in the community.
-      p We wanted to empower mamas to build grassroots campaigns to bring Mamava to their communities. So we created a tool that gave them the power to plant their flag and announce to the world that they deserved a proper place to pump.
-      h3.mt2
-        strong
-          | Overview
-      p The Mamava Mamamap allows moms to nominate locations in their community that need Mamava Lactation Stations. Using the web app, moms can add their malls, airports, and offices and begin their own campaign to get Mamava.
-      p Once a mom has added a location to the Mamamap, she is given a campaign toolkit, customized to her and her nominated location. She can then print off dropcards to leave around the location’s bathrooms, letters to send to the facilities managers, and more.
-      p Once a location is nominated, other moms can voice their support. By selecting a location on the map that has already been nominated, moms can vote and comment on it.
+      .u-body-copy
+        p Working with Mamava, I was excited to use design and technology to help change the culture around breastfeeding. They wanted a tool to show potential customers their current locations. I pitched them the idea to not only showcase their current locations, but give moms the power to nominate their favorite places for future mamavas. With this tool, the Mavama sales team is now able to show potential customers the existing demand from people in the community.
+        p We wanted to empower mamas to build grassroots campaigns to bring Mamava to their communities. So we created a tool that gave them the power to plant their flag and announce to the world that they deserved a proper place to pump.
+        h3.mt2.u-text-center
+          strong
+            | Overview
+        p The Mamava Mamamap allows moms to nominate locations in their community that need Mamava Lactation Stations. Using the web app, moms can add their malls, airports, and offices and begin their own campaign to get Mamava.
+        p Once a mom has added a location to the Mamamap, she is given a campaign toolkit, customized to her and her nominated location. She can then print off dropcards to leave around the location’s bathrooms, letters to send to the facilities managers, and more.
+        p After a location is nominated, other moms can voice their support. By selecting a location on the map that has already been nominated, moms can vote and comment on it.
       .s-featured-img
-        img.u-center.img-responsive(src="/images/mmv_svg_screen.png")
+        img.u-center.img-responsive(src="/images/mmv_svg_screen.jpg")
         h5 Map with Nominated Locations
-      h3.mt2
-        strong
-          | Process
-      p I began the design process by talking to moms, both those who breastfeed, and those who use formula to learn what kinds of issues they had with breastfeeding in public.
-      .s-featured-img
-        img.u-center.img-responsive(src="/images/mamava-laptop.jpg")
-        h5 Map with Nominated Locations
-      h3.mt2
-        strong
-          | Tech
-      p This campaign is built as a single page web app with a full Javascript tech stack. Sails.js handles the models and controllers on the backend to generate REST API’s while Angular.js handles the views and controllers on the frontend and makes calls to the backend. MongoDB is being used to store data for scaleability.
-      p Tech stack: Angular.js, Node.js, Sails.js, Grunt, Bower, mongoDB
-      p Full REST API for backend.
+      .u-body-copy
+        h3.mt2.u-text-center
+          strong
+            | Process
+        p We began the design process by talking to moms, both those who breastfeed, and those who use formula to learn what kinds of issues they had with breastfeeding in public. We discussed issues they faced when traveling with their children, and worked to develop messaging that would resonate with new moms. We developed an indepth onboaring that welcomed mothers to the platform, introduced them to the Mamava units, and showed them around.
+        p As we began testing this onboarding with users, we found that the onboarding was too indepth, and users became frustrated with the number of steps involved. We also discovered much of the interface was intuative and didn't require as much explanation as we had previously thought. We went back to the drawing board and come up with a shorter three-step onboarding that tested better with users.
+      .s-featured-img.s-small-img
+        img.u-center.s-offset-1.img-responsive(src="/images/mmv_testing_01.jpg")
+        h5 Testing Paper Prototypes with Users
+      .s-featured-img.s-small-img
+        img.u-center.s-offset-1.img-responsive(src="/images/mmv-poster.jpg")
+        h5 Poster For Inside Mamava Units
+      .u-body-copy
+        h3.mt2.u-text-center
+          strong
+            | Tech
+        p This campaign is built as a single page web app with a full Javascript tech stack. Sails.js handles the models and controllers on the backend to generate REST API’s while Angular.js handles the views and controllers on the frontend and makes calls to the backend. MongoDB is being used to store data for scaleability.
+        p Tech stack: Angular.js, Node.js, Sails.js, Grunt, Bower, mongoDB
+        p Full REST API for backend.
