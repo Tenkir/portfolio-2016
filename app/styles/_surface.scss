@@ -29,6 +29,10 @@
   }
 }
 
+.s-small-img {
+  max-width: 1060px;
+}
+
 .s-hover-zoom {
   transform: scale(1);
   position: relative;
@@ -45,7 +49,7 @@
 }
 
 .s-featured-img {
-  margin: 3rem 0;
+  margin: 3rem auto;
   text-align: center;
 }
 
