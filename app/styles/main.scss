@@ -336,6 +336,14 @@ nav {
   }
 }
 
+.grovehub_card {
+  background-image: url('/images/gh_cover_sm.jpg');
+
+  @media(max-width: $screen-md-max) {
+    background-image: url('/images/grovehub_cover_xs.jpg');
+  }
+}
+
 .btn {
   @include transition(all 100ms ease-in-out);
 }
